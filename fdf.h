@@ -6,7 +6,7 @@
 /*   By: sdelhomm <sdelhomm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/10 17:14:32 by sdelhomm          #+#    #+#             */
-/*   Updated: 2017/12/14 19:23:18 by sdelhomm         ###   ########.fr       */
+/*   Updated: 2017/12/20 12:31:03 by sdelhomm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,8 @@ typedef struct	s_draw
 	int c;
 	int c2;
 	int z;
-	int v;
-	int ov;
+	float v;
+	float ov;
 	int x;
 	int y;
 }				t_draw;
