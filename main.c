@@ -6,7 +6,7 @@
 /*   By: sdelhomm <sdelhomm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/10 14:23:52 by sdelhomm          #+#    #+#             */
-/*   Updated: 2017/12/18 13:37:06 by sdelhomm         ###   ########.fr       */
+/*   Updated: 2017/12/28 16:13:26 by sdelhomm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int			main(int ac, char **av)
 			generate(&p);
 		}
 		else
-			ft_putstr("map error");
+			ft_putstr("map error\n");
 	}
 	else
 		ft_putstr("usage : ./fdf [file_path]\n");
