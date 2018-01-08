@@ -6,7 +6,7 @@
 /*   By: sdelhomm <sdelhomm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/10 14:24:49 by sdelhomm          #+#    #+#             */
-/*   Updated: 2018/01/08 11:47:04 by sdelhomm         ###   ########.fr       */
+/*   Updated: 2018/01/08 13:33:41 by sdelhomm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static void	reset_all(int kc, t_param *p)
 	if (kc == 49)
 	{
 		p->x = p->mid / 4;
-		p->y = 100;
+		p->y = p->esp * 6;
 		p->color1 = 255255255;
 		p->color2 = 255255255;
 		p->color3 = 255255255;
@@ -43,18 +43,18 @@ static void	events2(int kc, t_param *p)
 		p->color3 = 000050150;
 	}
 	if (kc == 2)
-		p->varx += 0.3;
+		p->varx += p->esp / 50;
 	if (kc == 0)
-		p->varx -= 0.3;
+		p->varx -= p->esp / 50;
 	if (kc == 13)
 	{
-		p->vary += 0.3;
-		p->y -= (p->esp * (p->h / 2)) / (p->esp * 2);
+		p->vary += p->esp / 50;
+		p->y -= 9;
 	}
 	if (kc == 1)
 	{
-		p->vary -= 0.3;
-		p->y += (p->esp * (p->h / 2)) / (p->esp * 2);
+		p->vary -= p->esp / 50;
+		p->y += 9;
 	}
 }
 

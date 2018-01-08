@@ -6,7 +6,7 @@
 #    By: sdelhomm <sdelhomm@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/12/10 14:43:54 by sdelhomm          #+#    #+#              #
-#    Updated: 2017/12/30 15:46:59 by sdelhomm         ###   ########.fr        #
+#    Updated: 2018/01/08 13:40:51 by sdelhomm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,7 +46,7 @@ $(NAME):
 	@echo "\033[33;32m=== COMPILATION DE LA LIBFT ===\t\t\t\t[ ✓ ]"
 	@gcc $(FLAGS) -I libft/ -c $(SRC)
 	@echo "\033[33;32m=== CREATION DES OBJETS ===\t\t\t\t[ ✓ ]"
-	@gcc -o $(NAME) $(OBJ) -L libft/ -lft -lmlx -framework OpenGL -framework AppKit
+	@gcc -o $(NAME) $(OBJ) $(FLAGS) -L libft/ -lft -lmlx -framework OpenGL -framework AppKit
 	@echo "\033[33;32m=== CREATION DE L'EXECUTABLE \"$(NAME)\" ===\t\t\t[ ✓ ]"
 
 clean:
