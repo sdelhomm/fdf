@@ -6,12 +6,11 @@
 /*   By: sdelhomm <sdelhomm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/10 14:25:15 by sdelhomm          #+#    #+#             */
-/*   Updated: 2017/12/14 19:23:04 by sdelhomm         ###   ########.fr       */
+/*   Updated: 2018/01/04 11:21:29 by sdelhomm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
-#include <stdio.h>
 
 static int	count_word(char *str)
 {

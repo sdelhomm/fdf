@@ -6,7 +6,7 @@
 /*   By: sdelhomm <sdelhomm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/10 17:14:32 by sdelhomm          #+#    #+#             */
-/*   Updated: 2017/12/20 12:31:03 by sdelhomm         ###   ########.fr       */
+/*   Updated: 2018/01/04 16:08:40 by sdelhomm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,31 +34,38 @@ typedef struct	s_param
 	char	**content;
 	int		s;
 	int		bs;
-	int		esp;
+	double	varx;
+	double	vary;
+	double	esp;
+	double	espx;
+	double	espy;
+	double	zoom;
 	int		x;
 	int		y;
 	int		mid;
 	int		h;
 	int		l;
-	float	hi;
+	double	hi;
 	int		color;
 	int		color1;
 	int		color2;
+	int		color3;
+	int		tend;
 }				t_param;
 
 typedef struct	s_draw
 {
-	int x1;
-	int y1;
-	int x2;
-	int y2;
-	int c;
-	int c2;
-	int z;
-	float v;
-	float ov;
-	int x;
-	int y;
+	int		x1;
+	int		y1;
+	int		x2;
+	int		y2;
+	int		c;
+	int		c2;
+	int		z;
+	double	v;
+	double	ov;
+	double	x;
+	double	y;
 }				t_draw;
 
 void			fill_cont_h(t_param *p);

@@ -6,7 +6,7 @@
 /*   By: sdelhomm <sdelhomm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/09 16:05:33 by sdelhomm          #+#    #+#             */
-/*   Updated: 2017/12/14 19:31:08 by sdelhomm         ###   ########.fr       */
+/*   Updated: 2018/01/04 18:23:34 by sdelhomm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,5 +122,9 @@ int		ft_tolower(int c);
 int		ft_toupper(int c);
 
 void	ft_swap(int *a, int *b);
+
+char	*ft_strjoin_free(char *s1, char *s2);
+
+void	ft_strbuild(char **str, const char *s1, const char *s2);
 
 #endif

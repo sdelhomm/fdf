@@ -1,32 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_cont_size.c                                    :+:      :+:    :+:   */
+/*   ft_strbuild.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sdelhomm <sdelhomm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/10 14:26:40 by sdelhomm          #+#    #+#             */
-/*   Updated: 2017/12/30 15:46:58 by sdelhomm         ###   ########.fr       */
+/*   Created: 2018/01/04 18:16:56 by sdelhomm          #+#    #+#             */
+/*   Updated: 2018/01/04 18:25:55 by sdelhomm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fdf.h"
+#include "libft.h"
 
-int		get_cont_size(char *file)
+void	ft_strbuild(char **str, const char *s1, const char *s2)
 {
-	char	*buf[1];
-	int		fd;
-	int		bs;
-
-	bs = 0;
-	fd = open(file, O_RDONLY);
-	if (read(fd, buf, 0) < 0)
-	{
-		ft_putstr("Can't find map\n");
-		exit(0);
-	}
-	while ((read(fd, buf, 1)))
-		bs++;
-	close(fd);
-	return (bs);
+	*str = ft_strcpy(*str, s1);
+	*str = ft_strcat(*str, s2);
 }

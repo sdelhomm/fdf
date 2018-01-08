@@ -6,7 +6,7 @@
 /*   By: sdelhomm <sdelhomm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/10 14:24:10 by sdelhomm          #+#    #+#             */
-/*   Updated: 2017/12/28 16:49:57 by sdelhomm         ###   ########.fr       */
+/*   Updated: 2018/01/02 15:01:04 by sdelhomm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static void	stocking(t_param *p, int c, int c2, int i2)
 					c2++;
 			}
 		}
-		p->cont[i][i2] = 69696969;
+		p->tend = i2;
 		c++;
 		i++;
 	}

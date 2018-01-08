@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_cont_size.c                                    :+:      :+:    :+:   */
+/*   ft_strjoin_free.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sdelhomm <sdelhomm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/10 14:26:40 by sdelhomm          #+#    #+#             */
-/*   Updated: 2017/12/30 15:46:58 by sdelhomm         ###   ########.fr       */
+/*   Created: 2017/12/13 10:27:20 by sdelhomm          #+#    #+#             */
+/*   Updated: 2018/01/04 18:05:11 by sdelhomm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fdf.h"
+#include "libft.h"
 
-int		get_cont_size(char *file)
+char	*ft_strjoin_free(char *s1, char *s2)
 {
-	char	*buf[1];
-	int		fd;
-	int		bs;
+	char	*str;
+	int		j;
+	int		k;
 
-	bs = 0;
-	fd = open(file, O_RDONLY);
-	if (read(fd, buf, 0) < 0)
-	{
-		ft_putstr("Can't find map\n");
-		exit(0);
-	}
-	while ((read(fd, buf, 1)))
-		bs++;
-	close(fd);
-	return (bs);
+	if (s1 == NULL || s2 == NULL)
+		return (NULL);
+	j = ft_strlen(s1);
+	k = ft_strlen(s2);
+	str = malloc((k + j + 1) * sizeof(*str));
+	if (str == NULL)
+		return (NULL);
+	str = ft_strcpy(str, s1);
+	str = ft_strcat(str, s2);
+	free(s1);
+	return (str);
 }
