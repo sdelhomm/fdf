@@ -6,7 +6,7 @@
 /*   By: sdelhomm <sdelhomm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/10 14:25:15 by sdelhomm          #+#    #+#             */
-/*   Updated: 2018/01/08 13:50:08 by sdelhomm         ###   ########.fr       */
+/*   Updated: 2018/01/08 14:20:31 by sdelhomm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ static int	count_word(char *str)
 
 	mot = 0;
 	i = 0;
-	if (str[i] != ' ' && str[i] != '\t')
+	if (str[i] != ' ' && str[i] != '\t' && str[i] != '\n')
 		mot++;
 	while (str[i + 1])
 	{
-		if ((str[i] == ' ' || str[i] == '\t')
-				&& str[i + 1] != ' ' && str[i + 1] != '\t')
+		if ((str[i] == ' ' || str[i] == '\t' || str[i] == '\n') && str[i + 1]
+		!= ' ' && str[i + 1] != '\t' && str[i + 1] != '\n')
 			mot++;
 		i++;
 	}

@@ -6,7 +6,7 @@
 /*   By: sdelhomm <sdelhomm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/10 14:23:52 by sdelhomm          #+#    #+#             */
-/*   Updated: 2018/01/04 18:12:43 by sdelhomm         ###   ########.fr       */
+/*   Updated: 2018/01/08 15:29:02 by sdelhomm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@ static void	generate(t_param *p)
 	p->img_str = mlx_get_data_addr(p->ptr_img, &(p->bpp), &(p->sl), &(p->end));
 	p->mid = (p->sl / 2);
 	p->x = p->mid / 4;
-	p->y = p->esp * 6;
+	p->y = p->esp * 4;
 	p->color1 = 255255255;
 	p->color2 = 255255255;
 	p->color3 = 255255255;
-	p->espy = (p->esp / 1.2) * p->zoom;
-	p->espx = (p->esp / 1.2) * p->zoom;
+	p->espy = (p->esp + p->vary) * p->zoom;
+	p->espx = (p->esp + p->varx) * p->zoom;
 	fill_cont_h(p);
 	fill_cont_v(p);
 	p->win = mlx_new_window(p->mlx, p->s, p->s, "fdf");

@@ -6,7 +6,7 @@
 /*   By: sdelhomm <sdelhomm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/10 14:24:10 by sdelhomm          #+#    #+#             */
-/*   Updated: 2018/01/02 15:01:04 by sdelhomm         ###   ########.fr       */
+/*   Updated: 2018/01/08 15:28:39 by sdelhomm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static void	stocking(t_param *p, int c, int c2, int i2)
 	{
 		i2 = 0;
 		c2 = 0;
-		while (p->content[c][c2] != '\n')
+		while (p->content[c][c2] != '\0')
 		{
 			if (p->content[c][c2] == ' ')
 				c2++;
@@ -29,7 +29,7 @@ static void	stocking(t_param *p, int c, int c2, int i2)
 			{
 				p->cont[i][i2] = (ft_atoi(p->content[c] + c2));
 				i2++;
-				while (p->content[c][c2] != ' ' && p->content[c][c2] != '\n')
+				while (p->content[c][c2] != ' ' && p->content[c][c2] != '\0')
 					c2++;
 			}
 		}

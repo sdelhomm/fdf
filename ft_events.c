@@ -6,7 +6,7 @@
 /*   By: sdelhomm <sdelhomm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/10 14:24:49 by sdelhomm          #+#    #+#             */
-/*   Updated: 2018/01/08 13:33:41 by sdelhomm         ###   ########.fr       */
+/*   Updated: 2018/01/08 14:32:44 by sdelhomm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static void	reset_all(int kc, t_param *p)
 	if (kc == 49)
 	{
 		p->x = p->mid / 4;
-		p->y = p->esp * 6;
+		p->y = p->esp * 4;
 		p->color1 = 255255255;
 		p->color2 = 255255255;
 		p->color3 = 255255255;
@@ -118,8 +118,8 @@ int			ft_events(int kc, t_param *p)
 	events2(kc, p);
 	color(kc, p);
 	reset_all(kc, p);
-	p->espy = ((p->esp / 1.2) + p->vary) * p->zoom;
-	p->espx = ((p->esp / 1.2) + p->varx) * p->zoom;
+	p->espy = (p->esp + p->vary) * p->zoom;
+	p->espx = (p->esp + p->varx) * p->zoom;
 	mlx_destroy_image(p->mlx, p->ptr_img);
 	p->ptr_img = mlx_new_image(p->mlx, p->s, p->s);
 	fill_cont_h(p);
