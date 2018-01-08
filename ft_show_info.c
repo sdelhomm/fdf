@@ -6,13 +6,13 @@
 /*   By: sdelhomm <sdelhomm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/14 13:24:03 by sdelhomm          #+#    #+#             */
-/*   Updated: 2018/01/08 14:20:34 by sdelhomm         ###   ########.fr       */
+/*   Updated: 2018/01/08 16:02:14 by sdelhomm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-void	put_info(char *zoom, char *x, char *y, t_param *p)
+static void	put_info(char *zoom, char *x, char *y, t_param *p)
 {
 	mlx_string_put(p->mlx, p->win, 30, 30, 255255255, zoom);
 	mlx_string_put(p->mlx, p->win, 30, 45, 255255255, x);
