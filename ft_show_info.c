@@ -6,7 +6,7 @@
 /*   By: sdelhomm <sdelhomm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/14 13:24:03 by sdelhomm          #+#    #+#             */
-/*   Updated: 2018/01/08 16:05:37 by sdelhomm         ###   ########.fr       */
+/*   Updated: 2018/01/11 10:46:56 by sdelhomm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,15 +33,15 @@ void		ft_show_info(t_param *p)
 	tmp[0] = ft_itoa(p->zoom);
 	if (!(zoom = (char*)malloc((8 +
 		ft_strlen(tmp[0])) * sizeof(*zoom))))
-		exit(0);
+		mem_error();
 	ft_strbuild(&zoom, "Zoom = X", tmp[0]);
 	tmp[1] = ft_itoa(p->x);
 	if (!(x = (char*)malloc((4 + ft_strlen(tmp[1])) * sizeof(*zoom))))
-		exit(0);
+		mem_error();
 	ft_strbuild(&x, "x = ", tmp[1]);
 	tmp[2] = ft_itoa(p->y);
 	if (!(y = (char*)malloc((4 + ft_strlen(tmp[2])) * sizeof(*zoom))))
-		exit(0);
+		mem_error();
 	ft_strbuild(&y, "y = ", tmp[2]);
 	put_info(zoom, x, y, p);
 	free(tmp[0]);

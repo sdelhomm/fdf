@@ -6,7 +6,7 @@
 /*   By: sdelhomm <sdelhomm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/10 14:24:49 by sdelhomm          #+#    #+#             */
-/*   Updated: 2018/01/08 14:32:44 by sdelhomm         ###   ########.fr       */
+/*   Updated: 2018/01/11 13:21:11 by sdelhomm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,14 @@
 
 static void	reset_all(int kc, t_param *p)
 {
-	if (kc == 49)
+	if (kc == ESP)
 	{
 		p->x = p->mid / 4;
-		p->y = p->esp * 4;
-		p->color1 = 255255255;
-		p->color2 = 255255255;
-		p->color3 = 255255255;
-		if (p->l > p->h)
-			p->esp = (p->s) / (p->l * 2);
-		else
-			p->esp = (p->s) / (p->h * 2);
-		if (p->esp <= 0)
-			p->esp = 1;
-		p->hi = 1;
+		p->y = p->esp * 1.5;
+		p->color1 = WHITE;
+		p->color2 = WHITE;
+		p->color3 = WHITE;
+		p->hi = 0.5;
 		p->zoom = 1;
 		p->varx = 0;
 		p->vary = 0;
@@ -36,22 +30,22 @@ static void	reset_all(int kc, t_param *p)
 
 static void	events2(int kc, t_param *p)
 {
-	if (kc == 18)
+	if (kc == K1)
 	{
-		p->color1 = 165140025;
-		p->color2 = 000255000;
-		p->color3 = 000050150;
+		p->color1 = DBLUE;
+		p->color2 = DGREEN;
+		p->color3 = BROWN;
 	}
-	if (kc == 2)
+	if (kc == KD)
 		p->varx += p->esp / 50;
-	if (kc == 0)
+	if (kc == KA)
 		p->varx -= p->esp / 50;
-	if (kc == 13)
+	if (kc == KW)
 	{
 		p->vary += p->esp / 50;
 		p->y -= 9;
 	}
-	if (kc == 1)
+	if (kc == KS)
 	{
 		p->vary -= p->esp / 50;
 		p->y += 9;
@@ -60,55 +54,51 @@ static void	events2(int kc, t_param *p)
 
 static void	color(int kc, t_param *p)
 {
-	if (kc == 20)
+	if (kc == K2)
 	{
-		p->color1 = 100255050;
-		p->color2 = 000000255;
+		p->color1 = YELLOW;
+		p->color2 = PURPLE;
 		p->color3 = p->color2;
 	}
-	if (kc == 21)
+	if (kc == K3)
 	{
-		p->color1 = 100050200;
-		p->color2 = 250090000;
+		p->color1 = LGREEN;
+		p->color2 = LRED;
 		p->color3 = p->color2;
 	}
-	if (kc == 23)
+	if (kc == K4)
 	{
-		p->color1 = 255000255;
-		p->color2 = 000255255;
+		p->color1 = DRED;
+		p->color2 = LBLUE;
 		p->color3 = p->color2;
 	}
-	if (kc == 19)
+	if (kc == K5)
 	{
-		p->color1 = 010200050;
-		p->color2 = 200030100;
+		p->color1 = PINK;
+		p->color2 = ORANGE;
 		p->color3 = p->color2;
 	}
 }
 
 static void	events(int kc, t_param *p)
 {
-	if (kc == 53)
+	if (kc == ESC)
 		exit(0);
-	if (kc == 69)
+	if (kc == PLUS)
 		p->hi = p->hi + 0.1;
-	if (kc == 78)
+	if (kc == MINUS)
 		p->hi = p->hi - 0.1;
-	if (kc == 34)
-	{
+	if (kc == KI)
 		p->zoom *= 1.05;
-	}
-	if (kc == 31)
-	{
+	if (kc == KO)
 		p->zoom /= 1.05;
-	}
-	if (kc == 126)
+	if (kc == UP)
 		p->y = p->y - 5;
-	if (kc == 123)
+	if (kc == LEFT)
 		p->x = p->x - 5;
-	if (kc == 124)
+	if (kc == RIGHT)
 		p->x = p->x + 5;
-	if (kc == 125)
+	if (kc == DOWN)
 		p->y = p->y + 5;
 }
 

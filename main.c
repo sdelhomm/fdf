@@ -6,11 +6,17 @@
 /*   By: sdelhomm <sdelhomm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/10 14:23:52 by sdelhomm          #+#    #+#             */
-/*   Updated: 2018/01/08 15:29:02 by sdelhomm         ###   ########.fr       */
+/*   Updated: 2018/01/11 13:12:13 by sdelhomm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
+
+void		mem_error(void)
+{
+	ft_putstr_fd("memory error\n", 2);
+	exit(0);
+}
 
 static void	generate(t_param *p)
 {
@@ -21,10 +27,10 @@ static void	generate(t_param *p)
 	p->img_str = mlx_get_data_addr(p->ptr_img, &(p->bpp), &(p->sl), &(p->end));
 	p->mid = (p->sl / 2);
 	p->x = p->mid / 4;
-	p->y = p->esp * 4;
-	p->color1 = 255255255;
-	p->color2 = 255255255;
-	p->color3 = 255255255;
+	p->y = p->esp * 1.5;
+	p->color1 = WHITE;
+	p->color2 = WHITE;
+	p->color3 = WHITE;
 	p->espy = (p->esp + p->vary) * p->zoom;
 	p->espx = (p->esp + p->varx) * p->zoom;
 	fill_cont_h(p);
@@ -42,7 +48,7 @@ int			main(int ac, char **av)
 
 	if (ac == 2)
 	{
-		p.hi = 1;
+		p.hi = 0.5;
 		p.zoom = 1;
 		p.varx = 0;
 		p.vary = 0;
@@ -53,9 +59,9 @@ int			main(int ac, char **av)
 			generate(&p);
 		}
 		else
-			ft_putstr("map error\n");
+			ft_putstr_fd("map error\n", 2);
 	}
 	else
-		ft_putstr("usage : ./fdf [file_path]\n");
+		ft_putstr_fd("usage : ./fdf [file_path]\n", 2);
 	return (0);
 }

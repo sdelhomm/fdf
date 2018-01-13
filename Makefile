@@ -6,7 +6,7 @@
 #    By: sdelhomm <sdelhomm@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/12/10 14:43:54 by sdelhomm          #+#    #+#              #
-#    Updated: 2018/01/08 14:20:41 by sdelhomm         ###   ########.fr        #
+#    Updated: 2018/01/11 12:47:33 by sdelhomm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,13 +41,14 @@ OBJ =	main.o \
 
 all: $(NAME)
 
-$(NAME):
+$(NAME): $(OBJ)
 	@make -C libft/
 	@echo "\033[33;32m=== COMPILATION DE LA LIBFT ===\t\t\t\t[ ✓ ]"
-	@gcc $(FLAGS) -I libft/ -c $(SRC)
-	@echo "\033[33;32m=== CREATION DES OBJETS ===\t\t\t\t[ ✓ ]"
 	@gcc -o $(NAME) $(OBJ) $(FLAGS) -L libft/ -lft -lmlx -framework OpenGL -framework AppKit
 	@echo "\033[33;32m=== CREATION DE L'EXECUTABLE \"$(NAME)\" ===\t\t\t[ ✓ ]"
+
+%.o: %.c
+	@gcc $(FLAGS) -I libft/ -c $< -o $@
 
 clean:
 	@make -C libft/ clean

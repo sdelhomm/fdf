@@ -6,7 +6,7 @@
 /*   By: sdelhomm <sdelhomm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/10 14:24:10 by sdelhomm          #+#    #+#             */
-/*   Updated: 2018/01/08 15:28:39 by sdelhomm         ###   ########.fr       */
+/*   Updated: 2018/01/11 10:48:39 by sdelhomm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,12 @@ void		ft_stock_value(t_param *p)
 	int i;
 
 	i = 0;
-	p->cont = (int**)malloc((p->h + 1) * sizeof(int**));
+	if (!(p->cont = (int**)malloc((p->h + 1) * sizeof(int**))))
+		mem_error();
 	while (i < p->h)
 	{
-		p->cont[i] = (int*)malloc((p->l + 1) * sizeof(int*));
+		if (!(p->cont[i] = (int*)malloc((p->l + 1) * sizeof(int*))))
+			mem_error();
 		i++;
 	}
 	stocking(p, 0, 0, 0);
